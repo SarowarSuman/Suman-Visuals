@@ -163,11 +163,11 @@ suman-visuals/
 
 **Sarowar Suman** - Photographer · Videographer · Editor · Software Engineering Student
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Sarowar%20Suman-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/sarowarsuman)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-sarowarsuman-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/sarowarsuman)
 
-[![Facebook](https://img.shields.io/badge/Facebook-sms.fm.gp-1877F2?style=for-the-badge&logo=facebook)](https://facebook.com/sms.fm.gp)
+[![Facebook](https://img.shields.io/badge/Facebook-sms.fm.gp-1877F2?style=flat-square&logo=facebook)](https://facebook.com/sms.fm.gp)
 
-[![Email](https://img.shields.io/badge/Email-Contact%20Me-EA4335?style=for-the-badge&logo=gmail)](mailto:sarowarsumancontact@gmail.com)
+[![Email](https://img.shields.io/badge/Email-sarowarsumancontact@gmail.com-EA4335?style=flat-square&logo=gmail)](mailto:sarowarsumancontact@gmail.com) 
 
 ---
 
