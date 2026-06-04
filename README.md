@@ -108,58 +108,6 @@ Typography makes or breaks a portfolio. The rule: pair a **serif** (personality,
 
 ---
 
-### 🔐 SHA-256 Password Hashing (Web Crypto API)
-**What it does:** The admin password is never stored in plain text. Instead, the SHA-256 hash is stored. When you enter a password, it's hashed in the browser and compared to the stored hash.
-
-**Why hash, not just store the password?**
-
-If the code is ever public (GitHub), anyone can read it. A plain `if(password === 'mypassword')` exposes the password immediately.
-
-With SHA-256:
-- The hash `1f1abd0a...` is stored in the code
-- If someone sees it, they can't reverse it to get `suman2026`
-- The actual password exists only in your head
-
-**Why SHA-256 specifically?**
-- Built into every modern browser via `crypto.subtle.digest()` — no library needed
-- Fast enough for a password check, secure enough for this use case
-- MD5 and SHA-1 are broken; SHA-256 is the current standard
-
----
-
-### 🖼️ Canvas API (Watermarking)
-**What it does:** When you upload an image, it's drawn onto an HTML canvas, a watermark (`© suman-visuals.netlify.app`) is painted on top, then the canvas is exported back as a JPEG and uploaded to Supabase.
-
-**Why client-side watermarking, not server-side?**
-
-Server-side watermarking (like Sharp.js on Node.js) requires a backend. This site has no backend. The Canvas API does image manipulation entirely in the browser — no server round-trip, no extra cost, no infrastructure.
-
-**The flow:**
-```
-User selects file → FileReader loads it → Canvas draws image → 
-Canvas draws watermark text → canvas.toBlob() → Upload to Supabase
-```
-
-**What you get:** Every photo in your gallery already has your URL watermarked in. If anyone screenshots or downloads, your branding is there.
-
----
-
-### 📁 Category Tagging System
-**What it does:** When uploading, you select a category (Nature, Portrait, Landscape, etc.). The category is embedded in the filename as a tag: `1748234567_[nature]_photo.jpg`. The gallery reads this tag to filter and count correctly.
-
-**Why filename tagging, not a database?**
-
-A database approach would need Supabase Tables, SQL queries, and joins. That's a lot of complexity for what is essentially metadata on 30-50 files.
-
-Filename tagging is:
-- ✅ Zero infrastructure — no database table needed
-- ✅ Self-contained — the file carries its own metadata
-- ✅ Survives migrations — if you move to a different storage, categories come with the files
-- ✅ Human-readable — you can see `[nature]` in the filename and understand it
-
-**The tradeoff:** You can't rename a file without losing its category. Acceptable for a personal portfolio.
-
----
 
 ## 🏛️ Architecture Overview
 
@@ -173,8 +121,8 @@ Filename tagging is:
 │     │                  (photos + videos)            │
 │     │                                               │
 │     ├── Admin Panel                                 │
-│     │     └── Upload ──→ Canvas Watermark           │
-│     │                        └──→ Supabase Upload   │
+│     │     └── Upload ──→ Supabase Upload            │
+│     │                                               │
 │     │                                               │
 │     └── Contact Form ──→ Web3Forms ──→ Gmail        │
 └─────────────────────────────────────────────────────┘
@@ -190,9 +138,6 @@ Filename tagging is:
 |---|---|
 | 📸 Dynamic Gallery | Loads from Supabase Storage in real-time |
 | 🎬 Video Support | Upload + play MP4/MOV directly in the gallery |
-| 🏷️ Category Filtering | Street, Portrait, Nature, Landscape, Travel, Other |
-| 💧 Auto Watermarking | Every uploaded image gets a watermark baked in |
-| 🔐 Hashed Admin Password | SHA-256 — safe to push to GitHub |
 | 📱 Fully Responsive | Works on phones and desktops |
 | ✉️ Contact Form | Messages delivered to Gmail via Web3Forms |
 | 🌌 Animated Hero | Particle canvas + orbiting photo system |
@@ -210,60 +155,15 @@ suman-visuals/
     │
     ├── <style>         # All CSS — variables, components, animations
     ├── <body>          # HTML structure — nav, hero, gallery, about, contact
-    └── <script>        # All JavaScript — Supabase, gallery, upload, watermark
+    └── <script>        # All JavaScript — Supabase, gallery, upload
 ```
 
----
-
-## ⚙️ Setup (Fork & Customize)
-
-**1. Create a Supabase project**
-```
-supabase.com → New Project → Create Storage Bucket → Set to Public
-```
-
-**2. Update credentials in index.html**
-```javascript
-const SUPABASE_URL = 'your-project-url';
-const SUPABASE_KEY = 'your-anon-key';
-```
-
-**3. Set your admin password**
-```javascript
-// Generate SHA-256 hash of your password:
-// Open browser console and run:
-crypto.subtle.digest('SHA-256', new TextEncoder().encode('yourpassword'))
-  .then(b => console.log([...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')))
-
-// Paste the result as ADMIN_PW_HASH in index.html
-```
-
-**4. Set up Web3Forms**
-```
-web3forms.com → Get Access Key → paste as access_key in sendMsg()
-```
-
-**5. Deploy**
-```
-Netlify → New Site → Drag & Drop index.html → Done
-```
-
----
-
-## 🔒 Security Notes
-
-- Admin password is **SHA-256 hashed** — the hash in this repo cannot be reversed
-- Supabase anon key is **public by design** — it only has permission to read/write the `media` bucket
-- No user data is collected or stored
-- Contact form messages go directly to Gmail, not stored anywhere
-
----
 
 ## 👤 Author
 
 **Sarowar Suman** — Photographer · Videographer · Editor · Software Engineering Student
 
-[![Website](https://img.shields.io/badge/Portfolio-suman--visuals.netlify.app-63b3ed?style=flat-square)](https://suman-visuals.netlify.app)
+[![Linkedin](https://img.shields.io/badge/Linkedin-linkedin.com/in/sarowarsuman-63b3ed?style=flat-square)](www.linkedin.com/in/sarowarsuman)
 [![Facebook](https://img.shields.io/badge/Facebook-sms.fm.gp-1877F2?style=flat-square&logo=facebook)](https://facebook.com/sms.fm.gp)
 [![Email](https://img.shields.io/badge/Email-sarowarsumancontact@gmail.com-EA4335?style=flat-square&logo=gmail)](mailto:sarowarsumancontact@gmail.com)
 
