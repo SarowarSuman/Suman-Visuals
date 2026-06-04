@@ -15,7 +15,7 @@
 <br/>
 
 **A fully dynamic, cloud-powered photography & videography portfolio.**
-Built with pure HTML/CSS/JS — no frameworks, no build tools, no complexity.
+Built with pure HTML/CSS/JS - no frameworks, no build tools, no complexity.
 Just clean code, real photos, and a backend that actually works.
 
 </div>
@@ -24,9 +24,9 @@ Just clean code, real photos, and a backend that actually works.
 
 ## ✨ What Makes This Different
 
-Most portfolio sites are static — photos hardcoded, no way to update without editing code. This one is **fully live**:
+Most portfolio sites are static photos hardcoded, no way to update without editing code. This one is **fully live**:
 
-- Upload a photo from your phone → it appears on the site **instantly** for everyone
+- Upload a photo from my devices → it appears on the site **instantly** for everyone
 - Delete a photo from admin → gone from the site in seconds
 - Every visitor sees the same up-to-date gallery, always
 
@@ -93,7 +93,7 @@ Without it, the options are: `mailto:` links (opens an email client, terrible UX
 ---
 
 ### 🎨 Playfair Display + Outfit (Google Fonts)
-**What it does:** Typography — Playfair Display for headings, Outfit for body text.
+**What it does:** Typography - Playfair Display for headings, Outfit for body text.
 
 **Why these two, not system fonts or other Google Fonts?**
 
