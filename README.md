@@ -115,9 +115,9 @@ Typography makes or breaks a portfolio. The rule: pair a **serif** (personality,
 ┌─────────────────────────────────────────────────────┐
 │                    Browser                          │
 │                                                     │
-│  index.html  ──────────────────────────────────    │
+│  index.html  ──────────────────────────────────     │
 │     │                                               │
-│     ├── Gallery  ←──── Supabase Storage (CDN)      │
+│     ├── Gallery  ←──── Supabase Storage (CDN)       │
 │     │                  (photos + videos)            │
 │     │                                               │
 │     ├── Admin Panel                                 │
