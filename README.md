@@ -68,9 +68,9 @@ A single HTML file means:
 
 **Benefits here:**
 - Upload files with 3 lines of JS (`sb.storage.from('media').upload(...)`)
-- Public CDN delivery — fast load worldwide
+- Public CDN delivery - fast load worldwide
 - Files persist forever (until you delete them)
-- No server needed — the browser talks to Supabase directly
+- No server needed - the browser talks to Supabase directly
 
 ---
 
@@ -86,8 +86,7 @@ A single HTML file means:
 | Spam protection | ✅ Built-in | ❌ Manual | ✅ Built-in | ❌ Manual |
 | No backend needed | ✅ | ✅ | ✅ | ❌ |
 
-**The real reason:** A contact form on a static site has no server to receive POST requests. Web3Forms acts as the middleman — it receives the form data and forwards it to your email. Free, reliable, and takes 2 minutes to set up.
-
+**The real reason:** A contact form on a static site has no server to receive POST requests. Web3Forms acts as the middleman - it receives the form data and forwards it to your email.
 Without it, the options are: `mailto:` links (opens an email client, terrible UX) or a full Node.js/Python backend (massive overkill for one form).
 
 ---
@@ -99,12 +98,12 @@ Without it, the options are: `mailto:` links (opens an email client, terrible UX
 
 Typography makes or breaks a portfolio. The rule: pair a **serif** (personality, emotion) with a **sans-serif** (clarity, readability).
 
-- **Playfair Display** — A high-contrast, editorial serif. Used by magazines and creative studios. Gives the site a "this person takes their craft seriously" feel. The italic variant is particularly elegant for accent text.
-- **Outfit** — A geometric sans-serif designed for screens. Highly legible at small sizes, has personality at larger sizes. Feels modern without being cold.
+- **Playfair Display** - A high-contrast, editorial serif. Used by magazines and creative studios. Gives the site a "this person takes their craft seriously" feel. The italic variant is particularly elegant for accent text.
+- **Outfit** - A geometric sans-serif designed for screens. Highly legible at small sizes, has personality at larger sizes. Feels modern without being cold.
 
 **Why not system fonts?** `-apple-system, BlinkMacSystemFont` looks different on every device. The design breaks.
 
-**Why not Roboto/Inter?** Roboto is a Google product font — fine, but ubiquitous and characterless. Inter is excellent for apps but feels corporate for a creative portfolio. Playfair+Outfit hits the "artistic but professional" tone precisely.
+**Why not Roboto/Inter?** Roboto is a Google product font - fine, but ubiquitous and characterless. Inter is excellent for apps but feels corporate for a creative portfolio. Playfair+Outfit hits the "artistic but professional" tone precisely.
 
 ---
 
@@ -151,19 +150,19 @@ Typography makes or breaks a portfolio. The rule: pair a **serif** (personality,
 ```
 suman-visuals/
 │
-└── index.html          # The entire site — HTML + CSS + JS in one file
+└── index.html          # The entire site - HTML + CSS + JS in one file
     │
-    ├── <style>         # All CSS — variables, components, animations
-    ├── <body>          # HTML structure — nav, hero, gallery, about, contact
-    └── <script>        # All JavaScript — Supabase, gallery, upload
+    ├── <style>         # All CSS - variables, components, animations
+    ├── <body>          # HTML structure - nav, hero, gallery, about, contact
+    └── <script>        # All JavaScript - Supabase, gallery, upload
 ```
 
 
 ## 👤 Author
 
-**Sarowar Suman** — Photographer · Videographer · Editor · Software Engineering Student
+**Sarowar Suman** - Photographer · Videographer · Editor · Software Engineering Student
 
-[![Linkedin](https://img.shields.io/badge/Linkedin-linkedin.com/in/sarowarsuman-63b3ed?style=flat-square)](www.linkedin.com/in/sarowarsuman)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-sarowarsuman-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/sarowarsuman)
 [![Facebook](https://img.shields.io/badge/Facebook-sms.fm.gp-1877F2?style=flat-square&logo=facebook)](https://facebook.com/sms.fm.gp)
 [![Email](https://img.shields.io/badge/Email-sarowarsumancontact@gmail.com-EA4335?style=flat-square&logo=gmail)](mailto:sarowarsumancontact@gmail.com)
 
