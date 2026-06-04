@@ -10,7 +10,7 @@
 
 <br/>
 
-> *"I don't wait for the perfect shot — I walk until the world shows me one."*
+*"I don't wait for the perfect shot — I walk until the world shows me one."*
 
 <br/>
 
