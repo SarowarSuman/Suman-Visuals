@@ -1,0 +1,20 @@
+name: Keep Supabase Alive
+
+on:
+  schedule:
+    - cron: '0 0 */5 * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase Storage
+        run: |
+          curl -s -o /dev/null -w "%{http_code}" \
+            "https://afyjwsvpslwapgvinfub.supabase.co/storage/v1/object/list/media" \
+            -X POST \
+            -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFmeWp3c3Zwc2x3YXBndmluZnViIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk1OTc0OTQsImV4cCI6MjA5NTE3MzQ5NH0.4-VCium-9fLzFGS7T4InjLAMdci0_V5nhCTDcG31xSM" \
+            -H "Content-Type: application/json" \
+            -d '{"limit":1}' \
+          && echo "Supabase pinged successfully"
